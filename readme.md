@@ -1,5 +1,6 @@
 
-<p align="center"><h2>E-Sellers Online Shop Demo</h2></p>
+<p align="center"><h2>Laravel Advance E-Commerce Demo</h2></p>
+<p align="center">This project is not complete. Its under working.</p>
 
 ## How to use this project
 
@@ -10,11 +11,11 @@
     * Go to the project folder using cd command on your cmd or terminal.
 
     * Set up the database: 
-            => Create a database which name is db_sellers
-            => Import the database from the project folder DB/db_sellers.sql (Note: After importing the database you can delete the DB folder with db_esellers.sql from the project folder.)
+            => Create a database which name is db_advance_ecom
+            => Import the database from the project folder DB/db_advance_ecom.sql (Note: After importing the database you can delete the DB folder with db_advance_ecom.sql from the project folder.)
     * Run composer install on your cmd or terminal
 
-    * Copy .env.example file to .env on the root folder. You can type copy .env.example .env if using command prompt Windows or cp .env.example .env if using terminal, Ubuntu Open your .env file and change the database name (DB_DATABASE=db_esellers) to whatever you have, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration.
+    * Copy .env.example file to .env on the root folder. You can type copy .env.example .env if using command prompt Windows or cp .env.example .env if using terminal, Ubuntu Open your .env file and change the database name (DB_DATABASE=db_advance_ecom) to whatever you have, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration.
 
     * By default, the username is root and you can leave the password field empty. (This is for Xampp)
 
