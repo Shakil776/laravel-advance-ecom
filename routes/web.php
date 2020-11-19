@@ -25,6 +25,14 @@ Route::namespace('Front')->group(function(){
     foreach ($catUrls as $url) {
         Route::get('/'.$url, 'ProductsController@listing');
     }    
+    // product details
+    Route::get('/product/{id}', 'ProductsController@productDetails');
+    // get product price
+    Route::post('/get-product-price', 'ProductsController@getPrice');
+    // add to cart
+    Route::post('/add-to-cart', 'CartController@addToCart');
+    // show cart product
+    Route::get('/cart', 'CartController@showCart');
 });
 
 // admin panel route start here

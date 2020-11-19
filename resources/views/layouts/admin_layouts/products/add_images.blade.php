@@ -148,7 +148,7 @@
                       @endif
 
                   </table>
-                  <button type="submit" class="btn btn-info">Update Attribute</button>
+                  
                 </div>
                 <!-- /.card-body -->
               </div>

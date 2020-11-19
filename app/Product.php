@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     public function category(){
-        return $this->belongsTo('App\Category', 'category_id')->select('id', 'category_name');
+        return $this->belongsTo('App\Category', 'category_id')->select('id', 'category_name', 'category_url');
     }
 
     public function section(){
@@ -25,4 +25,30 @@ class Product extends Model
     public function images() {
     	return $this->hasMany('App\ProductImage', 'product_id');
     }
+
+    // product filters
+    public static function productFilters(){
+        $productFilters['fabricArray'] = ['Cotton', 'Polycotton', 'Linen', 'Jersey', 'Silk', 'Satin', 'Pure Wool'];
+        $productFilters['patternArray'] = ['Checked', 'Plain', 'Printed', 'Self', 'Solid'];
+        $productFilters['sleeveArray'] = ['Full Sleeve', 'Half Sleeve', 'Short Sleeve', 'Sleeveless'];
+        $productFilters['fitArray'] = ['Regular', 'Slim'];
+        return $productFilters;
+    }
+
+    // get product discount and category discount
+    public static function getDiscountedPrice($product_id){
+        $proDetails = Product::where('id', $product_id)->select('category_id', 'product_price', 'product_discount')->first()->toArray();
+        $catDetails = Category::where('id', $proDetails['category_id'])->select('category_discount')->first()->toArray();
+
+        if ($proDetails['product_discount'] > 0) {
+            // if product discount is added
+            $discountedPrice = $proDetails['product_price'] - ($proDetails['product_price'] * $proDetails['product_discount'] / 100);
+        }else if($catDetails['category_discount'] > 0){
+            // if product discount is not added and category discount is added
+            $discountedPrice = $proDetails['product_price'] - ($proDetails['product_price'] * $catDetails['category_discount'] / 100);
+        }else{
+            $discountedPrice = 0;
+        }
+        return $discountedPrice;
+    } 
 }

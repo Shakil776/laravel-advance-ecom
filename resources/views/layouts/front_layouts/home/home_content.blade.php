@@ -16,7 +16,7 @@
               <li class="span3">
                 <div class="thumbnail">
                   <i class="tag"></i>
-                  <a href="#">
+                  <a href="{{ url('product/'.$item['id']) }}">
                     @php $image_path = "images/product_images/small/".$item['product_main_image']; @endphp
                     @if(!empty($item['product_main_image']) && file_exists($image_path))
                       <img src="{{ asset($image_path) }}" alt="Product Image">
@@ -26,7 +26,7 @@
                   </a>
                   <div class="caption">
                     <h5>{{ $item['product_name'] }}</h5>
-                    <h4><a class="btn" href="#">VIEW</a> <span class="pull-right">TK.&nbsp;{{ $item['product_price'] }}</span></h4>
+                    <h4><a class="btn" href="{{ url('product/'.$item['id']) }}">VIEW</a> <span class="pull-right">TK.&nbsp;{{ $item['product_price'] }}</span></h4>
                   </div>
                 </div>
               </li>
@@ -45,7 +45,7 @@
     @foreach($newProducts as $product)
       <li class="span3">
         <div class="thumbnail">
-          <a  href="#">
+          <a  href="{{ url('product/'.$product['id']) }}">
             @php $image_path = "images/product_images/small/".$product['product_main_image']; @endphp
             @if(!empty($product['product_main_image']) && file_exists($image_path))
               <img src="{{ asset($image_path) }}" alt="Product Image">
@@ -59,7 +59,7 @@
               {{ $product['product_code'] }}
             </p>
             
-            <h4 style="text-align:center"><a class="btn" href="#"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">TK.&nbsp;{{ $product['product_price'] }}</a></h4>
+            <h4 style="text-align:center"><a class="btn" href="{{ url('product/'.$product['id']) }}"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="javascript:">TK.&nbsp;{{ $product['product_price'] }}</a></h4>
           </div>
         </div>
       </li>

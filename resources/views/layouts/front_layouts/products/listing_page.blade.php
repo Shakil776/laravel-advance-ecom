@@ -32,7 +32,7 @@
     <div class="tab-content filter_products">
       @include('layouts.front_layouts.products.ajax_products_listing_page')
     </div>
-    <a href="compare.html" class="btn btn-large pull-right">Compare Product</a>
+    <a href="#" class="btn btn-large pull-right">Compare Product</a>
     <div class="pagination">
       @if(isset($_GET['sort']) && !empty($_GET['sort']))
         {{ $categoryProducts->appends(['sort' => $_GET['sort']])->links() }}

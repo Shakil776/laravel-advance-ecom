@@ -60,7 +60,7 @@
                     @include('layouts.admin_layouts.categories.append_categories_level')
                   </div>
                   <div class="form-group">
-                    <label for="category_discount">Category Discount</label>
+                    <label for="category_discount">Category Discount (%)</label>
                     <input type="text" class="form-control" id="category_discount" name="category_discount" placeholder="Enter Category Discount" @if(!empty($categoryData['category_discount'])) value="{{ $categoryData['category_discount'] }}" @else value="{{ old('category_discount') }}" @endif>
                   </div>
                   <div class="form-group">

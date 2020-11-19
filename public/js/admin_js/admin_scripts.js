@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    // csrf token setup
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    
     // check admin current password is correct or not
     $("#current_password").keyup(function(){
         var current_password = $(this).val();
@@ -233,19 +240,5 @@ $(document).ready(function(){
         $(this).parent('div').remove(); //Remove field html
         x--; //Decrement field counter
     });
-    
 
-
-
-
-
-
-    
-
-    // csrf token setup
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
 });

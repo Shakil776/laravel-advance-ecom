@@ -5,7 +5,7 @@
 @endphp
 
 <div id="sidebar" class="span3">
-  <div class="well well-small"><a id="myCart" href="product_summary.html"><img src="{{ asset('images/front_images/ico-cart.png') }}" alt="cart">3 Items in your cart</a></div>
+  {{-- <div class="well well-small"><a id="myCart" href="product_summary.html"><img src="{{ asset('images/front_images/ico-cart.png') }}" alt="cart">3 Items in your cart</a></div> --}}
   <ul id="sideManu" class="nav nav-tabs nav-stacked">
     @foreach($sections as $section)
       @if(count($section['categories']) > 0)
@@ -22,7 +22,37 @@
       @endif
     @endforeach
   </ul>
-  <br/>
+  <br>
+  @if(isset($page_name) && $page_name == 'listing')
+    <div class="well well-small">
+      <h5>Fabric</h5>
+      @foreach($fabricArray as $fabric)
+      <input style="margin-top: -3px;" type="checkbox" class="fabric" name="fabric[]" id="{{ $fabric }}" value="{{ $fabric }}">&nbsp;&nbsp;{{ $fabric }}<br>
+      @endforeach
+    </div>
+
+    <div class="well well-small">
+      <h5>Pattern</h5>
+      @foreach($patternArray as $pattern)
+      <input style="margin-top: -3px;" type="checkbox" class="pattern" name="pattern[]" id="{{ $pattern }}" value="{{ $pattern }}">&nbsp;&nbsp;{{ $pattern }}<br>
+      @endforeach
+    </div>
+
+    <div class="well well-small">
+      <h5>Sleeve</h5>
+      @foreach($sleeveArray as $sleeve)
+      <input style="margin-top: -3px;" type="checkbox" class="sleeve" name="sleeve[]" id="{{ $sleeve }}" value="{{ $sleeve }}">&nbsp;&nbsp;{{ $sleeve }}<br>
+      @endforeach
+    </div>
+
+    <div class="well well-small">
+      <h5>Fit</h5>
+      @foreach($fitArray as $fit)
+      <input style="margin-top: -3px;" type="checkbox" class="fit" name="fit[]" id="{{ $fit }}" value="{{ $fit }}">&nbsp;&nbsp;{{ $fit }}<br>
+      @endforeach
+    </div>
+  @endif
+
   <div class="thumbnail">
     <img src="{{ asset('images/front_images/payment_methods.png') }}" title="Payment Methods" alt="Payments Methods">
     <div class="caption">

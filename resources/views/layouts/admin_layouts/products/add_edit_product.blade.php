@@ -154,7 +154,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="product_discount">Product Discount</label>
+                    <label for="product_discount">Product Discount (%)</label>
                     <input type="text" class="form-control" id="product_discount" name="product_discount" placeholder="Enter product Discount" @if(!empty($productData['product_discount'])) value="{{ $productData['product_discount'] }}" @else value="{{ old('product_discount') }}" @endif>
                   </div>
 
