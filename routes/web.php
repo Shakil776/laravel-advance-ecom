@@ -14,7 +14,7 @@ use App\Category;
 |
 */
 
-Auth::routes();
+/* Auth::routes(); */
 
 // front end route start here
 Route::namespace('Front')->group(function(){
@@ -33,6 +33,21 @@ Route::namespace('Front')->group(function(){
     Route::post('/add-to-cart', 'CartController@addToCart');
     // show cart product
     Route::get('/cart', 'CartController@showCart');
+    // update cart quantity
+    Route::post('/update-cart-quantity', 'CartController@updateCartItem');
+    // item remove from cart
+    Route::post('/cart-remove', 'CartController@removeCartItem');
+
+    // User login register form
+    Route::get('/login-register', 'UserController@loginRegister');
+    // User login
+    Route::post('/login', 'UserController@loginUser');
+    // User register
+    Route::post('/register', 'UserController@registerUser');
+    // User Logout
+    Route::get('/logout', 'UserController@logoutUser');
+    // Check email address already exists or not
+    Route::match(['get', 'post'], '/check-email', 'UserController@checkEmail');
 });
 
 // admin panel route start here

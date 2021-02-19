@@ -1,7 +1,7 @@
 @php
   use App\Product; 
 @endphp
-<div class="tab-pane  active" id="blockView">
+<div class="tab-pane active" id="blockView">
   <ul class="thumbnails">
     @if(!empty($categoryProducts))
       @foreach($categoryProducts as $product)
@@ -27,7 +27,6 @@
               </p>
               @php $discounted_price = Product::getDiscountedPrice($product['id']); @endphp
               <h4 style="text-align:center">
-                {{-- <a class="btn" href="{{ url('product/'.$product['id']) }}"> <i class="icon-zoom-in"></i></a>  --}}
                 <a class="btn btn-custom" href="#">Add to <i class="icon-shopping-cart"></i></a> 
 
                 @if($discounted_price > 0)

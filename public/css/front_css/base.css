@@ -108,3 +108,8 @@
 #topMenu li{float: none;}
 .navbar .nav > li > a {border-top:1px solid #666; padding:0}
 }
+
+form.cmxform label.error, label.error {
+    color: red;
+    font-style: italic;
+}

@@ -46,22 +46,22 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="dataTable" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>SL. No</th>
-                    <th>Name</th>
-                    <th>Image</th>
-                    <th>Brand</th>
-                    <th>Category</th>
-                    <th>Section</th>
-                    <th>Price</th>
-                    <th>Code</th>
-                    <th>Color</th>
-                    <th>Status</th>
-                    <th width="12%">Action</th>
-                  </tr>
+                  <thead class="text-center">
+                    <tr>
+                      <th>SL. No</th>
+                      <th>Name</th>
+                      <th>Image</th>
+                      <th>Brand</th>
+                      <th>Category</th>
+                      <th>Section</th>
+                      <th>Price</th>
+                      <th>Code</th>
+                      <th>Color</th>
+                      <th>Status</th>
+                      <th width="17%">Action</th>
+                    </tr>
                   </thead>
-                  <tbody>
+                  <tbody class="text-center">
                     @if(!empty($products))
                         @php($i = 1)
                         @foreach($products as $product)
@@ -90,7 +90,7 @@
                                     <a class="changeProductStatus" id="product-{{ $product['id'] }}" product_id="{{ $product['id'] }}" href="javascript:void(0)"><i class="fas fa-toggle-off" status="Inactive"></i></a> 
                                 @endif
                             </td>
-                            <td>
+                            <td width="17%">
                               <a href="{{ url('/admin/add-attribute/'.$product['id']) }}" title="Add Attribute"><i class="fas fa-plus text-primary"></i></a>&nbsp;&nbsp;
                               <a href="{{ url('/admin/product/'.$product['id']) }}" title="Edit"><i class="fas fa-edit text-info"></i></a>&nbsp;&nbsp;
                               <a href="{{ url('/admin/add-image/'.$product['id']) }}" title="Add Image"><i class="fas fa-plus-circle text-success"></i></a>&nbsp;&nbsp;
@@ -99,7 +99,7 @@
                         </tr>
                         @endforeach
                     @endif
-
+                  </tbody>
                 </table>
               </div>
               <!-- /.card-body -->

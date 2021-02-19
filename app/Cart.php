@@ -32,8 +32,8 @@ class Cart extends Model
     }
 
     // get product price depends on size
-    public static function getProductAttrPrice($p_id, $size){
+    /*public static function getProductAttrPrice($p_id, $size){
     	$productAttrPrice = ProductAttribute::where(['product_id'=>$p_id, 'size'=>$size])->select('price')->first()->toArray();
     	return $productAttrPrice['price'];
-    }
+    }*/
 }

@@ -34,7 +34,9 @@
 	<div class="container">
 		<div class="row">
 			<!-- Sidebar -->
-			@include('layouts.front_layouts.includes.sidebar')
+			
+		    @include('layouts.front_layouts.includes.sidebar')
+			
 			<!-- Sidebar end -->
 			@yield('main-content')
 		</div>
@@ -44,6 +46,7 @@
 @include('layouts.front_layouts.includes.footer')
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="{{ url('js/front_js/jquery.js') }}" type="text/javascript"></script>
+<script src="{{ url('js/front_js/jquery.validate.js') }}" type="text/javascript"></script>
 <script src="{{ url('js/front_js/front.min.js') }}" type="text/javascript"></script>
 <script src="{{ url('js/front_js/google-code-prettify/prettify.js') }}"></script>
 <script src="{{ url('js/front_js/front.js') }}"></script>

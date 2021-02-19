@@ -15,7 +15,7 @@ class IndexController extends Controller
     	$featuredChunk = array_chunk($featuredItems, 4);
     	// get new products
     	$newProducts = Product::where('status', 1)->orderBy('id', 'DESC')->limit(6)->get()->toArray();
-    	/*dd($newProducts); die;*/
+    	
     	$page_name = "home";
     	return view('layouts.front_layouts.home.home_content')->with(compact('page_name', 'featureProductsCount', 'featuredChunk', 'newProducts'));
     }
